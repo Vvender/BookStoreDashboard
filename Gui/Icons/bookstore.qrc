@@ -1,0 +1,30 @@
+<RCC>
+  <qresource prefix="Icons">
+    <file>minus-square.svg</file>
+    <file>save.svg</file>
+    <file>edit.svg</file>
+    <file>plus-square.svg</file>
+    <file>x-square.svg</file>
+    <file>credit-card.svg</file>
+    <file>tag.svg</file>
+    <file>trending-up.svg</file>
+    <file>refresh-cw.svg</file>
+    <file>search.svg</file>
+    <file>home.svg</file>
+    <file>activity.svg</file>
+    <file>book.svg</file>
+    <file>bookmark.svg</file>
+    <file>book-open.svg</file>
+    <file>chevron-down.svg</file>
+    <file>github.svg</file>
+    <file>linkedin.svg</file>
+    <file>mail.svg</file>
+    <file>map-pin.svg</file>
+    <file>paperclip.svg</file>
+    <file>shopping-bag.svg</file>
+    <file>shopping-cart.svg</file>
+    <file>user.svg</file>
+    <file>users.svg</file>
+    <file>x.svg</file>
+  </qresource>
+</RCC>
