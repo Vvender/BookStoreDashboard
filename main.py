@@ -17,13 +17,21 @@ class MainWindow:
         # Create an instance of EventHandler and pass the app and ui objects
         self.utility_events = UtilityEventHandler(self.app, self.ui)
 
-        # UTILITY EVENTS #
+        # UTILITY EVENTS / HEADER #
         self.ui.btn_github.clicked.connect(self.utility_events.utility_event_handler)
         self.ui.btn_linkedin.clicked.connect(self.utility_events.utility_event_handler)
         self.ui.btn_cv.clicked.connect(self.utility_events.utility_event_handler)
         self.ui.btn_email.clicked.connect(self.utility_events.utility_event_handler)
         self.ui.btn_minimize.clicked.connect(self.ui_window.showMinimized)
         self.ui.btn_close.clicked.connect(self.app.quit)
+
+        # UTILITY EVENTS / MAIN MENU #
+        self.ui.btn_menu_home.clicked.connect(self.utility_events.utility_event_handler)
+        self.ui.btn_menu_sales.clicked.connect(self.utility_events.utility_event_handler)
+        self.ui.btn_menu_books.clicked.connect(self.utility_events.utility_event_handler)
+        self.ui.btn_menu_customers.clicked.connect(self.utility_events.utility_event_handler)
+        self.ui.btn_menu_employees.clicked.connect(self.utility_events.utility_event_handler)
+        self.ui.btn_menu_stores.clicked.connect(self.utility_events.utility_event_handler)
 
 
 if __name__ == "__main__":

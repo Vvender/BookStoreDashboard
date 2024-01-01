@@ -789,7 +789,7 @@ QPushButton:pressed{
        </property>
        <property name="icon">
         <iconset resource="Icons/bookstore.qrc">
-         <normaloff>:/Icons/shopping-cart.svg</normaloff>:/Icons/shopping-cart.svg</iconset>
+         <normaloff>:/Icons/shopping-bag.svg</normaloff>:/Icons/shopping-bag.svg</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -907,7 +907,7 @@ QLabel{
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="page_home">
        <widget class="QFrame" name="frm_home_monthly_revenue">
@@ -4103,7 +4103,7 @@ QLabel{
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="Icons/bookstore.qrc">:/Icons/user.svg</pixmap>
+            <pixmap resource="Icons/bookstore.qrc">:/Icons/shopping-bag.svg</pixmap>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -5361,7 +5361,7 @@ QLabel{
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="Icons/bookstore.qrc">:/Icons/shopping-bag.svg</pixmap>
+            <pixmap resource="Icons/bookstore.qrc">:/Icons/map-pin.svg</pixmap>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
