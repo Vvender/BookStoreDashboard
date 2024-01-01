@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="Icons">
+    <file>package.svg</file>
+    <file>pen-tool.svg</file>
+    <file>percent.svg</file>
+    <file>star.svg</file>
     <file>minus-square.svg</file>
     <file>save.svg</file>
     <file>edit.svg</file>
