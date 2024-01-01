@@ -39,18 +39,9 @@ class UtilityEventHandler:
                 # Open the CV URL
                 QDesktopServices.openUrl(QUrl('https://blush-aretha-94.tiiny.site'))
             # Check if the sender is a menu button and call page_changer with the corresponding index
-            elif sender == self.ui.btn_menu_home:
-                self.page_changer(0)
-            elif sender == self.ui.btn_menu_sales:
-                self.page_changer(1)
-            elif sender == self.ui.btn_menu_books:
-                self.page_changer(2)
-            elif sender == self.ui.btn_menu_customers:
-                self.page_changer(3)
-            elif sender == self.ui.btn_menu_employees:
-                self.page_changer(4)
-            elif sender == self.ui.btn_menu_stores:
-                self.page_changer(5)
+            elif sender in self.button_mapping.values():
+                index = list(self.button_mapping.keys())[list(self.button_mapping.values()).index(sender)]
+                self.page_changer(index)
         except Exception as e:  # Handle any exceptions that occur
             print(f"An error occurred during utility event handler: {e}")
 
