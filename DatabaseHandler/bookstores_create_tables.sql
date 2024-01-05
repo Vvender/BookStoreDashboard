@@ -1,6 +1,3 @@
-USE BookStores;
-GO
-
 -- Table: production.publishers
 CREATE TABLE production.publishers (
     publisher_id SMALLINT IDENTITY(1,1) PRIMARY KEY,
@@ -71,8 +68,8 @@ CREATE TABLE sales.staff (
 -- Table: sales.orders
 CREATE TABLE sales.orders (
     order_id INT IDENTITY (1, 1) PRIMARY KEY,
-    customer_id INT,
-    order_date DATE,
+    customer_id INT NOT NULL,
+    order_date DATE NOT NULL,
     store_id INT NOT NULL,
     staff_id INT NOT NULL,
     FOREIGN KEY (customer_id) REFERENCES sales.customers (customer_id) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -86,7 +83,7 @@ CREATE TABLE sales.order_items (
     item_id INT,
     book_id INT NOT NULL,
     quantity INT NOT NULL,
-    list_price DECIMAL (10, 2) NOT NULL,
+    book_price DECIMAL (10, 2) NOT NULL,
     discount DECIMAL (4, 2) NOT NULL DEFAULT 0,
     PRIMARY KEY (order_id, item_id),
     FOREIGN KEY (order_id) REFERENCES sales.orders (order_id) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -102,3 +99,4 @@ CREATE TABLE production.stocks (
     FOREIGN KEY (store_id) REFERENCES sales.stores (store_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (book_id) REFERENCES production.books (book_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
