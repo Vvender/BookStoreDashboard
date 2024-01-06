@@ -907,7 +907,7 @@ QLabel{
 }</string>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_home">
        <widget class="QFrame" name="frm_home_monthly_revenue">
@@ -985,7 +985,7 @@ QLabel{
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/credit-card.svg</pixmap>
+          <pixmap resource="Icons/bookstore.qrc">:/Icons/users.svg</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -1011,7 +1011,7 @@ QLabel{
           </font>
          </property>
          <property name="text">
-          <string>Monthly Revenue Generated</string>
+          <string>Total Customers</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1096,7 +1096,7 @@ QLabel{
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/tag.svg</pixmap>
+          <pixmap resource="Icons/bookstore.qrc">:/Icons/user.svg</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -1122,7 +1122,7 @@ QLabel{
           </font>
          </property>
          <property name="text">
-          <string>Monthly Average Book Price</string>
+          <string>Top Performing Employee</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1207,7 +1207,7 @@ QLabel{
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/percent.svg</pixmap>
+          <pixmap resource="Icons/bookstore.qrc">:/Icons/map-pin.svg</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -1233,7 +1233,7 @@ QLabel{
           </font>
          </property>
          <property name="text">
-          <string>Monthly Sales Growth</string>
+          <string>Top Performing Store</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1318,7 +1318,7 @@ QLabel{
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/users.svg</pixmap>
+          <pixmap resource="Icons/bookstore.qrc">:/Icons/star.svg</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -1344,7 +1344,7 @@ QLabel{
           </font>
          </property>
          <property name="text">
-          <string>New Customers</string>
+          <string>Manager of the Month</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1435,7 +1435,7 @@ QLabel{
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/star.svg</pixmap>
+          <pixmap resource="Icons/bookstore.qrc">:/Icons/package.svg</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -1461,7 +1461,7 @@ QLabel{
           </font>
          </property>
          <property name="text">
-          <string>Monthly Best Seller</string>
+          <string>Books in Stock</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1546,7 +1546,7 @@ QLabel{
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/shopping-bag.svg</pixmap>
+          <pixmap resource="Icons/bookstore.qrc">:/Icons/percent.svg</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -1572,7 +1572,7 @@ QLabel{
           </font>
          </property>
          <property name="text">
-          <string>Monthly Books Sold</string>
+          <string>Yearly Sales Growth</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1771,7 +1771,7 @@ QLabel{
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/star.svg</pixmap>
+          <pixmap resource="Icons/bookstore.qrc">:/Icons/tag.svg</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -1797,7 +1797,7 @@ QLabel{
           </font>
          </property>
          <property name="text">
-          <string>Best Seller</string>
+          <string>Average Book Price</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1882,7 +1882,7 @@ QLabel{
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/percent.svg</pixmap>
+          <pixmap resource="Icons/bookstore.qrc">:/Icons/pen-tool.svg</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -1908,7 +1908,7 @@ QLabel{
           </font>
          </property>
          <property name="text">
-          <string>Sales Growth</string>
+          <string>Best Seller Author</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1993,7 +1993,7 @@ QLabel{
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/users.svg</pixmap>
+          <pixmap resource="Icons/bookstore.qrc">:/Icons/bookmark.svg</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -2019,7 +2019,7 @@ QLabel{
           </font>
          </property>
          <property name="text">
-          <string>Total Customers</string>
+          <string>Best Seller Genre</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2215,7 +2215,7 @@ QLabel{
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/tag.svg</pixmap>
+          <pixmap resource="Icons/bookstore.qrc">:/Icons/book.svg</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -2241,7 +2241,7 @@ QLabel{
           </font>
          </property>
          <property name="text">
-          <string>Average Book Price</string>
+          <string>Best Seller Book</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2253,337 +2253,13 @@ QLabel{
        </widget>
       </widget>
       <widget class="QWidget" name="page_sales">
-       <widget class="QFrame" name="frm_sales_total_growth">
-        <property name="geometry">
-         <rect>
-          <x>450</x>
-          <y>20</y>
-          <width>215</width>
-          <height>100</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QLabel" name="lbl_sales_total_growth_info">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>141</width>
-           <height>45</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>14</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>-</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lbl_sales_total_growth_icon">
-         <property name="geometry">
-          <rect>
-           <x>144</x>
-           <y>10</y>
-           <width>65</width>
-           <height>45</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>65</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>65</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/percent.svg</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>false</bool>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lbl_sales_total_growth_title">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>70</y>
-           <width>195</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Sales Growth</string>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QFrame" name="frm_sales_total_avaragePrice">
-        <property name="geometry">
-         <rect>
-          <x>230</x>
-          <y>20</y>
-          <width>215</width>
-          <height>100</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QLabel" name="lbl_sales_total_avaragePrice_info">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>141</width>
-           <height>45</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>14</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>-</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lbl_sales_total_avaragePrice_icon">
-         <property name="geometry">
-          <rect>
-           <x>144</x>
-           <y>10</y>
-           <width>65</width>
-           <height>45</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>65</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>65</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/tag.svg</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>false</bool>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lbl_sales_total_avaragePrice_title">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>70</y>
-           <width>195</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Average Book Price</string>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QFrame" name="frm_sales_total_revenue">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>215</width>
-          <height>100</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QLabel" name="lbl_sales_total_revenue_info">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>141</width>
-           <height>45</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>14</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>-</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lbl_sales_total_revenue_icon">
-         <property name="geometry">
-          <rect>
-           <x>144</x>
-           <y>10</y>
-           <width>65</width>
-           <height>45</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>65</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>65</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/credit-card.svg</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>false</bool>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lbl_sales_total_revenue_title">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>70</y>
-           <width>195</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Total Revenue Generated</string>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </widget>
        <widget class="QTableView" name="tableView_sales">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>180</y>
+          <y>65</y>
           <width>655</width>
-          <height>351</height>
+          <height>461</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -2594,7 +2270,7 @@ QLabel{
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>135</y>
+          <y>20</y>
           <width>45</width>
           <height>45</height>
          </rect>
@@ -2629,7 +2305,7 @@ QLabel{
         <property name="geometry">
          <rect>
           <x>55</x>
-          <y>135</y>
+          <y>20</y>
           <width>45</width>
           <height>45</height>
          </rect>
@@ -2664,7 +2340,7 @@ QLabel{
         <property name="geometry">
          <rect>
           <x>145</x>
-          <y>135</y>
+          <y>20</y>
           <width>45</width>
           <height>45</height>
          </rect>
@@ -2699,7 +2375,7 @@ QLabel{
         <property name="geometry">
          <rect>
           <x>100</x>
-          <y>135</y>
+          <y>20</y>
           <width>45</width>
           <height>45</height>
          </rect>
@@ -2736,7 +2412,7 @@ QLabel{
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>254</y>
+          <y>140</y>
           <width>45</width>
           <height>45</height>
          </rect>
@@ -2767,328 +2443,13 @@ QLabel{
          </size>
         </property>
        </widget>
-       <widget class="QFrame" name="frm_books_bestSellerGenre">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>215</width>
-          <height>100</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QLabel" name="lbl_books_bestSellerGenre_info">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>141</width>
-           <height>45</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>14</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>-</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lbl_books_bestSellerGenre_icon">
-         <property name="geometry">
-          <rect>
-           <x>144</x>
-           <y>10</y>
-           <width>65</width>
-           <height>45</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>65</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>65</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/bookmark.svg</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>false</bool>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lbl_books_bestSellerGenre_title">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>60</y>
-           <width>171</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Best Seller Genre</string>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QFrame" name="frm_books_bestSellerAuthor">
-        <property name="geometry">
-         <rect>
-          <x>230</x>
-          <y>20</y>
-          <width>215</width>
-          <height>100</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QLabel" name="lbl_books_bestSellerAuthor_info">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>141</width>
-           <height>45</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>14</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>-</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lbl_books_bestSellerAuthor_icon">
-         <property name="geometry">
-          <rect>
-           <x>144</x>
-           <y>10</y>
-           <width>65</width>
-           <height>45</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>65</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>65</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/pen-tool.svg</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>false</bool>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lbl_books_bestSellerAuthor_title">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>60</y>
-           <width>171</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Best Seller Author</string>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QFrame" name="frm_books_booksInStock">
-        <property name="geometry">
-         <rect>
-          <x>450</x>
-          <y>20</y>
-          <width>215</width>
-          <height>100</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <widget class="QLabel" name="lbl_books_booksInStock_info">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>141</width>
-           <height>45</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>14</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>-</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lbl_books_booksInStock_icon">
-         <property name="geometry">
-          <rect>
-           <x>144</x>
-           <y>10</y>
-           <width>65</width>
-           <height>45</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>65</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>65</width>
-           <height>45</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="Icons/bookstore.qrc">:/Icons/package.svg</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>false</bool>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-        <widget class="QLabel" name="lbl_books_booksInStock_title">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>60</y>
-           <width>171</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Books In Stock</string>
-         </property>
-        </widget>
-       </widget>
        <widget class="QTableView" name="tableView_books">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>299</y>
+          <y>185</y>
           <width>655</width>
-          <height>233</height>
+          <height>341</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -3099,7 +2460,7 @@ QLabel{
         <property name="geometry">
          <rect>
           <x>145</x>
-          <y>254</y>
+          <y>140</y>
           <width>45</width>
           <height>45</height>
          </rect>
@@ -3134,7 +2495,7 @@ QLabel{
         <property name="geometry">
          <rect>
           <x>55</x>
-          <y>254</y>
+          <y>140</y>
           <width>45</width>
           <height>45</height>
          </rect>
@@ -3169,7 +2530,7 @@ QLabel{
         <property name="geometry">
          <rect>
           <x>100</x>
-          <y>254</y>
+          <y>140</y>
           <width>45</width>
           <height>45</height>
          </rect>
@@ -3204,7 +2565,7 @@ QLabel{
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>134</y>
+          <y>20</y>
           <width>655</width>
           <height>111</height>
          </rect>

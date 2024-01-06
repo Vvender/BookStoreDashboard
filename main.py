@@ -2,6 +2,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QWidget
 from Gui.ui_bookstore import Ui_Dashboard
 from EventHandler.utility_event_handler import UtilityEventHandler
+import DatabaseHandler.database_handler as database_handler
 
 
 class MainWindow:
