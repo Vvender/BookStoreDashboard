@@ -1,8 +1,15 @@
 import sys
+import os
 from PyQt5.QtWidgets import QApplication, QWidget
 from Gui.ui_bookstore import Ui_Dashboard
 from EventHandler.utility_event_handler import UtilityEventHandler
-import DatabaseHandler.database_handler as database_handler
+from DatabaseHandler.database_handler import BookStoreDatabase
+
+# Set the working directory to the script's directory
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+# Create an instance of BookStoreDatabase
+user_db = BookStoreDatabase()
 
 
 class MainWindow:

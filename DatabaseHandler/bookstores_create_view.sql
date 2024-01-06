@@ -1,142 +1,154 @@
--- View: TOTAL REVENUE
-
+-- 1. Total Revenue (total revenue of my stores)
 CREATE VIEW total_revenue_view AS
 SELECT
-  o.store_id,
-  SUM(oi.quantity * oi.book_price * (1 - oi.discount)) AS total_revenue
-FROM sales.orders o
-JOIN sales.order_items oi ON o.order_id = oi.order_id
-GROUP BY o.store_id;
-
--- View: BOOKS SOLD
-
-CREATE VIEW books_sold_view AS
-SELECT
-  o.store_id,
-  COUNT(DISTINCT oi.book_id) AS books_sold
-FROM sales.orders o
-JOIN sales.order_items oi ON o.order_id = oi.order_id
-GROUP BY o.store_id;
-
--- View: AVERAGE BOOK PRICE
-
-CREATE VIEW avg_book_price_view AS
-SELECT
-  o.store_id,
-  AVG(oi.book_price) AS avg_book_price
-FROM sales.orders o
-JOIN sales.order_items oi ON o.order_id = oi.order_id
-GROUP BY o.store_id;
-
--- View: BEST SELLER BOOK
-
-CREATE VIEW best_seller_book_view AS
-SELECT
-  o.store_id,
-  oi.book_id,
-  SUM(oi.quantity) AS total_quantity_sold
-FROM sales.orders o
-JOIN sales.order_items oi ON o.order_id = oi.order_id
-GROUP BY o.store_id, oi.book_id
-ORDER BY total_quantity_sold DESC
-LIMIT 1;
-
--- View: BEST SELLER GENRE
-
-CREATE VIEW best_seller_genre_view AS
-SELECT
-  o.store_id,
-  b.genre_id,
-  SUM(oi.quantity) AS total_quantity_sold
-FROM sales.orders o
-JOIN sales.order_items oi ON o.order_id = oi.order_id
-JOIN production.books b ON oi.book_id = b.book_id
-GROUP BY o.store_id, b.genre_id
-ORDER BY total_quantity_sold DESC
-LIMIT 1;
-
--- View: BEST SELLER AUTHOR
-
-CREATE VIEW best_seller_author_view AS
-SELECT
-  o.store_id,
-  b.author_id,
-  SUM(oi.quantity) AS total_quantity_sold
-FROM sales.orders o
-JOIN sales.order_items oi ON o.order_id = oi.order_id
-JOIN production.books b ON oi.book_id = b.book_id
-GROUP BY o.store_id, b.author_id
-ORDER BY total_quantity_sold DESC
-LIMIT 1;
-
--- View: TOTAL CUSTOMERS
-
-CREATE VIEW total_customers_view AS
-SELECT
-  s.store_id,
-  COUNT(DISTINCT o.customer_id) AS total_customers
-FROM sales.stores s
+    s.store_id,
+    s.store_name,
+    ISNULL(SUM(oi.quantity * oi.book_price * (1 - oi.discount)), 0) AS total_revenue
+FROM
+    sales.stores s
 LEFT JOIN sales.orders o ON s.store_id = o.store_id
-GROUP BY s.store_id;
+LEFT JOIN sales.order_items oi ON o.order_id = oi.order_id
+GROUP BY
+    s.store_id, s.store_name;
 
--- View: YEARLY SALES GROWTH
+-- 2. Total Number of books sold (total number of books sold in my stores)
+CREATE VIEW total_books_sold_view AS
+SELECT
+    s.store_id,
+    s.store_name,
+    ISNULL(SUM(oi.quantity), 0) AS total_books_sold
+FROM
+    sales.stores s
+LEFT JOIN sales.orders o ON s.store_id = o.store_id
+LEFT JOIN sales.order_items oi ON o.order_id = oi.order_id
+GROUP BY
+    s.store_id, s.store_name;
 
+-- 3. Average book price (average book price of sold books in all stores)
+CREATE VIEW average_book_price_view AS
+SELECT
+    ISNULL(AVG(oi.book_price), 0) AS average_book_price
+FROM
+    sales.stores s
+LEFT JOIN sales.orders o ON s.store_id = o.store_id
+LEFT JOIN sales.order_items oi ON o.order_id = oi.order_id;
+
+-- 4. Best seller book (select the most sold book in total)
+CREATE VIEW best_seller_book_view AS
+SELECT TOP 1 WITH TIES
+    b.book_id,
+    b.book_name,
+    ISNULL(SUM(oi.quantity), 0) AS total_quantity_sold
+FROM
+    production.books b
+LEFT JOIN sales.order_items oi ON b.book_id = oi.book_id
+GROUP BY
+    b.book_id, b.book_name
+ORDER BY
+    total_quantity_sold DESC;
+
+-- 5. Best seller genre (select the most sold genre in total)
+CREATE VIEW best_seller_genre_view AS
+SELECT TOP 1 WITH TIES
+    g.genre_id,
+    g.genre_name,
+    ISNULL(SUM(oi.quantity), 0) AS total_quantity_sold
+FROM
+    production.genres g
+LEFT JOIN production.books b ON g.genre_id = b.genre_id
+LEFT JOIN sales.order_items oi ON b.book_id = oi.book_id
+GROUP BY
+    g.genre_id, g.genre_name
+ORDER BY
+    total_quantity_sold DESC;
+
+-- 6. Best seller author (select the most sold author in total)
+CREATE VIEW best_seller_author_view AS
+SELECT TOP 1 WITH TIES
+    a.author_id,
+    a.author_name,
+    ISNULL(SUM(oi.quantity), 0) AS total_quantity_sold
+FROM
+    production.authors a
+LEFT JOIN production.books b ON a.author_id = b.author_id
+LEFT JOIN sales.order_items oi ON b.book_id = oi.book_id
+GROUP BY
+    a.author_id, a.author_name
+ORDER BY
+    total_quantity_sold DESC;
+
+-- 7. Number of customers (number of our customers in total)
+CREATE VIEW number_of_customers_view AS
+SELECT
+    COUNT(DISTINCT c.customer_id) AS total_customers
+FROM
+    sales.customers c;
+
+-- 8. Yearly sales growth (compare this year's revenue to the year before)
 CREATE VIEW yearly_sales_growth_view AS
 SELECT
-  store_id,
-  EXTRACT(YEAR FROM order_date) AS order_year,
-  SUM(SUM(oi.quantity * oi.book_price * (1 - oi.discount))) OVER (PARTITION BY store_id ORDER BY EXTRACT(YEAR FROM order_date)) AS yearly_sales
-FROM sales.orders o
-JOIN sales.order_items oi ON o.order_id = oi.order_id
-GROUP BY store_id, EXTRACT(YEAR FROM order_date);
+    YEAR(o.order_date) AS sales_year,
+    ISNULL(SUM(oi.quantity * oi.book_price * (1 - oi.discount)), 0) AS total_revenue
+FROM
+    sales.orders o
+LEFT JOIN sales.order_items oi ON o.order_id = oi.order_id
+GROUP BY
+    YEAR(o.order_date);
 
--- View: BOOKS IN STOCK
-
+-- 9. Books in stock (total books in our stocks)
 CREATE VIEW books_in_stock_view AS
 SELECT
-  s.store_id,
-  COUNT(*) AS books_in_stock
-FROM sales.stores s
-JOIN production.stocks st ON s.store_id = st.store_id
-GROUP BY s.store_id;
+    s.store_id,
+    s.store_name,
+    ISNULL(SUM(ps.quantity), 0) AS total_books_in_stock
+FROM
+    production.stocks ps
+LEFT JOIN sales.stores s ON ps.store_id = s.store_id
+GROUP BY
+    s.store_id, s.store_name;
 
--- View: TOP PERFORMING EMPLOYEE
-
+-- 10. Top-performing employee (staff that has the best revenue)
 CREATE VIEW top_performing_employee_view AS
-SELECT
-  s.store_id,
-  o.staff_id,
-  SUM(oi.quantity * oi.book_price * (1 - oi.discount)) AS total_revenue
-FROM sales.orders o
-JOIN sales.order_items oi ON o.order_id = oi.order_id
-JOIN sales.stores s ON o.store_id = s.store_id
-GROUP BY s.store_id, o.staff_id
-ORDER BY total_revenue DESC
-LIMIT 1;
+SELECT TOP 1 WITH TIES
+    st.staff_id,
+    st.first_name + ' ' + st.last_name AS employee_name,
+    ISNULL(SUM(oi.quantity * oi.book_price * (1 - oi.discount)), 0) AS total_revenue
+FROM
+    sales.staff st
+LEFT JOIN sales.orders o ON st.staff_id = o.staff_id
+LEFT JOIN sales.order_items oi ON o.order_id = oi.order_id
+GROUP BY
+    st.staff_id, st.first_name, st.last_name
+ORDER BY
+    total_revenue DESC;
 
--- View: TOP PERFORMING MANAGER
-
+-- 11. Top-performing manager (manager of the top-performing store)
 CREATE VIEW top_performing_manager_view AS
-SELECT
-  s.store_id,
-  s.manager_id,
-  SUM(oi.quantity * oi.book_price * (1 - oi.discount)) AS total_revenue
-FROM sales.orders o
-JOIN sales.order_items oi ON o.order_id = oi.order_id
-JOIN sales.stores s ON o.store_id = s.store_id
-GROUP BY s.store_id, s.manager_id
-ORDER BY total_revenue DESC
-LIMIT 1;
+SELECT TOP 1 WITH TIES
+    st.staff_id AS manager_id,
+    st.first_name + ' ' + st.last_name AS manager_name,
+    ISNULL(SUM(oi.quantity * oi.book_price * (1 - oi.discount)), 0) AS total_revenue
+FROM
+    sales.stores s
+JOIN sales.staff st ON s.manager_id = st.staff_id
+LEFT JOIN sales.orders o ON s.store_id = o.store_id
+LEFT JOIN sales.order_items oi ON o.order_id = oi.order_id
+GROUP BY
+    st.staff_id, st.first_name, st.last_name
+ORDER BY
+    total_revenue DESC;
 
--- View: TOP PERFORMING STORE
-
+-- 12. Top-performing store (store that has the best revenue)
 CREATE VIEW top_performing_store_view AS
-SELECT
-  s.store_id,
-  SUM(oi.quantity * oi.book_price * (1 - oi.discount)) AS total_revenue
-FROM sales.orders o
-JOIN sales.order_items oi ON o.order_id = oi.order_id
-JOIN sales.stores s ON o.store_id = s.store_id
-GROUP BY s.store_id
-ORDER BY total_revenue DESC
-LIMIT 1;
+SELECT TOP 1 WITH TIES
+    s.store_id,
+    s.store_name,
+    ISNULL(SUM(oi.quantity * oi.book_price * (1 - oi.discount)), 0) AS total_revenue
+FROM
+    sales.stores s
+LEFT JOIN sales.orders o ON s.store_id = o.store_id
+LEFT JOIN sales.order_items oi ON o.order_id = oi.order_id
+GROUP BY
+    s.store_id, s.store_name
+ORDER BY
+    total_revenue DESC;

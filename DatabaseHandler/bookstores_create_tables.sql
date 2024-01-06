@@ -23,9 +23,9 @@ CREATE TABLE production.books (
     book_name VARCHAR(100) UNIQUE NOT NULL,
     book_page SMALLINT NOT NULL,
     book_price DECIMAL (10,2) NOT NULL,
-    author_id SMALLINT NOT NULL,
-    genre_id SMALLINT NOT NULL,
-    publisher_id SMALLINT NOT NULL,
+    author_id SMALLINT,
+    genre_id SMALLINT,
+    publisher_id SMALLINT,
     FOREIGN KEY (author_id) REFERENCES production.authors(author_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (genre_id) REFERENCES production.genres(genre_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (publisher_id) REFERENCES production.publishers(publisher_id) ON DELETE CASCADE ON UPDATE CASCADE
@@ -41,15 +41,6 @@ CREATE TABLE sales.customers (
     address VARCHAR (255)
 );
 
--- Table: sales.stores
-CREATE TABLE sales.stores (
-    store_id INT IDENTITY (1, 1) PRIMARY KEY,
-    store_name VARCHAR (255) NOT NULL,
-    phone VARCHAR (25),
-    email VARCHAR (255),
-    address VARCHAR (255)
-);
-
 -- Table: sales.staff
 CREATE TABLE sales.staff (
     staff_id INT IDENTITY (1, 1) PRIMARY KEY,
@@ -58,20 +49,34 @@ CREATE TABLE sales.staff (
     email VARCHAR (255) NOT NULL UNIQUE,
     phone VARCHAR (25) NOT NULL UNIQUE,
     active TINYINT NOT NULL,
-    store_id INT NOT NULL,
-    manager_id INT,
-    address VARCHAR (255),
-    FOREIGN KEY (store_id) REFERENCES sales.stores (store_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (manager_id) REFERENCES sales.staff (staff_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+    store_id INT,
+    address VARCHAR (255)
 );
+
+-- Table: sales.stores
+CREATE TABLE sales.stores (
+    store_id INT IDENTITY (1, 1) PRIMARY KEY,
+    store_name VARCHAR (255) NOT NULL,
+    phone VARCHAR (25),
+    email VARCHAR (255),
+    address VARCHAR (255),
+    manager_id INT
+);
+
+-- Add Foreign Key Constraints
+ALTER TABLE sales.staff
+ADD CONSTRAINT FK_staff_store FOREIGN KEY (store_id) REFERENCES sales.stores (store_id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE sales.stores
+ADD CONSTRAINT FK_stores_manager FOREIGN KEY (manager_id) REFERENCES sales.staff (staff_id) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Table: sales.orders
 CREATE TABLE sales.orders (
     order_id INT IDENTITY (1, 1) PRIMARY KEY,
-    customer_id INT NOT NULL,
+    customer_id INT,
     order_date DATE NOT NULL,
-    store_id INT NOT NULL,
-    staff_id INT NOT NULL,
+    store_id INT,
+    staff_id INT,
     FOREIGN KEY (customer_id) REFERENCES sales.customers (customer_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (store_id) REFERENCES sales.stores (store_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (staff_id) REFERENCES sales.staff (staff_id) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -81,7 +86,7 @@ CREATE TABLE sales.orders (
 CREATE TABLE sales.order_items (
     order_id INT,
     item_id INT,
-    book_id INT NOT NULL,
+    book_id INT,
     quantity INT NOT NULL,
     book_price DECIMAL (10, 2) NOT NULL,
     discount DECIMAL (4, 2) NOT NULL DEFAULT 0,
@@ -99,4 +104,3 @@ CREATE TABLE production.stocks (
     FOREIGN KEY (store_id) REFERENCES sales.stores (store_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (book_id) REFERENCES production.books (book_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
