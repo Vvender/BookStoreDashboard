@@ -910,7 +910,7 @@ QLabel{
        <number>0</number>
       </property>
       <widget class="QWidget" name="page_home">
-       <widget class="QFrame" name="frm_home_monthly_revenue">
+       <widget class="QFrame" name="frm_home_customers">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -937,7 +937,7 @@ QLabel{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="lbl_home_monthly_revenue_info">
+        <widget class="QLabel" name="lbl_home_customers_info">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -960,7 +960,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_monthly_revenue_icon">
+        <widget class="QLabel" name="lbl_home_customers_icon">
          <property name="geometry">
           <rect>
            <x>144</x>
@@ -994,7 +994,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_monthly_revenue_title">
+        <widget class="QLabel" name="lbl_home_customers_title">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1021,7 +1021,7 @@ QLabel{
          </property>
         </widget>
        </widget>
-       <widget class="QFrame" name="frm_home_monthly_avaragePrice">
+       <widget class="QFrame" name="frm_home_employee">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -1048,7 +1048,7 @@ QLabel{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="lbl_home_monthly_avaragePrice_info">
+        <widget class="QLabel" name="lbl_home_employee_info">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1071,7 +1071,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_monthly_avaragePrice_icon">
+        <widget class="QLabel" name="lbl_home_employee_icon">
          <property name="geometry">
           <rect>
            <x>144</x>
@@ -1105,7 +1105,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_monthly_avaragePrice_title">
+        <widget class="QLabel" name="lbl_home_employee_title">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1132,7 +1132,7 @@ QLabel{
          </property>
         </widget>
        </widget>
-       <widget class="QFrame" name="frm_home_monthly_growth">
+       <widget class="QFrame" name="frm_home_store">
         <property name="geometry">
          <rect>
           <x>450</x>
@@ -1159,7 +1159,7 @@ QLabel{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="lbl_home_monthly_growth_info">
+        <widget class="QLabel" name="lbl_home_store_info">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1182,7 +1182,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_monthly_growth_icon">
+        <widget class="QLabel" name="lbl_home_store_icon">
          <property name="geometry">
           <rect>
            <x>144</x>
@@ -1216,7 +1216,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_monthly_growth_title">
+        <widget class="QLabel" name="lbl_home_store_title">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1243,7 +1243,7 @@ QLabel{
          </property>
         </widget>
        </widget>
-       <widget class="QFrame" name="frm_home_new_customers">
+       <widget class="QFrame" name="frm_home_manager">
         <property name="geometry">
          <rect>
           <x>230</x>
@@ -1270,7 +1270,7 @@ QLabel{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="lbl_home_new_customers_info">
+        <widget class="QLabel" name="lbl_home_manager_info">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1293,7 +1293,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_new_customers_icon">
+        <widget class="QLabel" name="lbl_home_manager_icon">
          <property name="geometry">
           <rect>
            <x>144</x>
@@ -1327,7 +1327,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_new_customers_title">
+        <widget class="QLabel" name="lbl_home_manager_title">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1354,7 +1354,7 @@ QLabel{
          </property>
         </widget>
        </widget>
-       <widget class="QFrame" name="frm_home_monthly_bestSeller">
+       <widget class="QFrame" name="frm_home_stock">
         <property name="geometry">
          <rect>
           <x>450</x>
@@ -1381,7 +1381,7 @@ QLabel{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="lbl_home_monthly_bestSeller_info">
+        <widget class="QLabel" name="lbl_home_stock_info">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1410,7 +1410,7 @@ QLabel{
           <bool>true</bool>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_monthly_bestSeller_icon">
+        <widget class="QLabel" name="lbl_home_stock_icon">
          <property name="geometry">
           <rect>
            <x>144</x>
@@ -1444,7 +1444,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_monthly_bestSeller_title">
+        <widget class="QLabel" name="lbl_home_stock_title">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1471,7 +1471,7 @@ QLabel{
          </property>
         </widget>
        </widget>
-       <widget class="QFrame" name="frm_home_monthly_booksSold">
+       <widget class="QFrame" name="frm_home_growth">
         <property name="geometry">
          <rect>
           <x>230</x>
@@ -1498,7 +1498,7 @@ QLabel{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="lbl_home_monthly_booksSold_info">
+        <widget class="QLabel" name="lbl_home_growth_info">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1521,7 +1521,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_monthly_booksSold_icon">
+        <widget class="QLabel" name="lbl_home_growth_icon">
          <property name="geometry">
           <rect>
            <x>144</x>
@@ -1555,7 +1555,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_monthly_booksSold_title">
+        <widget class="QLabel" name="lbl_home_growth_title">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1582,7 +1582,7 @@ QLabel{
          </property>
         </widget>
        </widget>
-       <widget class="QFrame" name="frm_home_total_booksSold">
+       <widget class="QFrame" name="frm_home_booksSold">
         <property name="geometry">
          <rect>
           <x>230</x>
@@ -1609,7 +1609,7 @@ QLabel{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="lbl_home_total_booksSold_info">
+        <widget class="QLabel" name="lbl_home_booksSold_info">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1632,7 +1632,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_total_booksSold_icon">
+        <widget class="QLabel" name="lbl_home_booksSold_icon">
          <property name="geometry">
           <rect>
            <x>144</x>
@@ -1666,7 +1666,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_total_booksSold_title">
+        <widget class="QLabel" name="lbl_home_booksSold_title">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1693,7 +1693,7 @@ QLabel{
          </property>
         </widget>
        </widget>
-       <widget class="QFrame" name="frm_home_total_bestSeller">
+       <widget class="QFrame" name="frm_home_avgPrice">
         <property name="geometry">
          <rect>
           <x>450</x>
@@ -1720,7 +1720,7 @@ QLabel{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="lbl_home_total_bestSeller_info">
+        <widget class="QLabel" name="lbl_home_avgPrice_info">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1746,7 +1746,7 @@ QLabel{
           <bool>true</bool>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_total_bestSeller_icon">
+        <widget class="QLabel" name="lbl_home_avgPrice_icon">
          <property name="geometry">
           <rect>
            <x>144</x>
@@ -1780,7 +1780,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_total_bestSeller_title">
+        <widget class="QLabel" name="lbl_home_avgPrice_title">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1807,7 +1807,7 @@ QLabel{
          </property>
         </widget>
        </widget>
-       <widget class="QFrame" name="frm_home_total_growth">
+       <widget class="QFrame" name="frm_home_author">
         <property name="geometry">
          <rect>
           <x>450</x>
@@ -1834,7 +1834,7 @@ QLabel{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="lbl_home_total_growth_info">
+        <widget class="QLabel" name="lbl_home_author_info">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1857,7 +1857,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_total_growth_icon">
+        <widget class="QLabel" name="lbl_home_author_icon">
          <property name="geometry">
           <rect>
            <x>144</x>
@@ -1891,7 +1891,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_total_growth_title">
+        <widget class="QLabel" name="lbl_home_author_title">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1918,7 +1918,7 @@ QLabel{
          </property>
         </widget>
        </widget>
-       <widget class="QFrame" name="frm_home_total_customers">
+       <widget class="QFrame" name="frm_home_genre">
         <property name="geometry">
          <rect>
           <x>230</x>
@@ -1945,7 +1945,7 @@ QLabel{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="lbl_home_total_customers_info">
+        <widget class="QLabel" name="lbl_home_genre_info">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1968,7 +1968,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_total_customers_icon">
+        <widget class="QLabel" name="lbl_home_genre_icon">
          <property name="geometry">
           <rect>
            <x>144</x>
@@ -2002,7 +2002,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_total_customers_title">
+        <widget class="QLabel" name="lbl_home_genre_title">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -2029,7 +2029,7 @@ QLabel{
          </property>
         </widget>
        </widget>
-       <widget class="QFrame" name="frm_home_total_revenue">
+       <widget class="QFrame" name="frm_home_revenue">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -2056,7 +2056,7 @@ QLabel{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="lbl_home_total_revenue_info">
+        <widget class="QLabel" name="lbl_home_revenue_info">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -2079,7 +2079,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_total_revenue_icon">
+        <widget class="QLabel" name="lbl_home_revenue_icon">
          <property name="geometry">
           <rect>
            <x>144</x>
@@ -2113,7 +2113,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_total_revenue_title">
+        <widget class="QLabel" name="lbl_home_revenue_title">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -2140,7 +2140,7 @@ QLabel{
          </property>
         </widget>
        </widget>
-       <widget class="QFrame" name="frm_home_total_avaragePrice">
+       <widget class="QFrame" name="frm_home_book">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -2167,7 +2167,7 @@ QLabel{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="lbl_home_total_avaragePrice_info">
+        <widget class="QLabel" name="lbl_home_book_info">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -2190,7 +2190,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_total_avaragePrice_icon">
+        <widget class="QLabel" name="lbl_home_book_icon">
          <property name="geometry">
           <rect>
            <x>144</x>
@@ -2224,7 +2224,7 @@ QLabel{
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="lbl_home_total_avaragePrice_title">
+        <widget class="QLabel" name="lbl_home_book_title">
          <property name="geometry">
           <rect>
            <x>10</x>

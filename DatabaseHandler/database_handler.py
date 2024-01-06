@@ -80,6 +80,12 @@ class BookStoreDatabase:
                 self.cursor.execute(query)  # Execute each SQL query separately
             print("BookStores tables are created.")
 
+            # Create views for BookStores database
+            view_creation_queries = self.read_sql_from_file('bookstores_create_view.sql')  # Use self here
+            for query in view_creation_queries:
+                self.cursor.execute(query)  # Execute each SQL query separately
+            print("BookStores view are created.")
+
             # Use the newly created database
             self.cursor.execute("USE BookStores")
             # Insert the initial data if not exists
