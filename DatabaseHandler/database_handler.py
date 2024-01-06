@@ -24,10 +24,7 @@ class BookStoreDatabase:
             )
             self.cursor = self.connection.cursor()
         except Exception as e:
-            custom_exception = CustomExceptionHandler(e)
-            print(
-                f"Error connecting to the database,Error Code: {custom_exception.error_code}, Message: {custom_exception.error_message}")
-            self.close_connection()
+            self.handle_exception("connecting to the database", e)
 
     def close_connection(self):
         try:
@@ -37,9 +34,7 @@ class BookStoreDatabase:
             if self.connection:
                 self.connection.close()
         except Exception as e:
-            custom_exception = CustomExceptionHandler(e)
-            print(
-                f"Error closing connection,Error Code: {custom_exception.error_code}, Message: {custom_exception.error_message}")
+            self.handle_exception("closing connection", e)
 
     def check_initial_setup(self):
         try:
@@ -53,9 +48,7 @@ class BookStoreDatabase:
             else:
                 print("Database already exists; no further action is necessary.")
         except Exception as e:
-            custom_exception = CustomExceptionHandler(e)
-            print(
-                f"Error checking initial setup,Error Code: {custom_exception.error_code}, Message: {custom_exception.error_message}")
+            self.handle_exception("checking initial setup", e)
 
     def read_sql_from_file(self, file_name):
         current_directory = os.path.dirname(os.path.abspath(__file__))
@@ -68,45 +61,39 @@ class BookStoreDatabase:
         sql_queries = [query.strip() for query in sql_queries if query.strip()]
         return sql_queries
 
-
     def create_initial_setup(self):
         try:
             self.db_connect('master', 'DESKTOP-FNO1431\SQLEXPRESS')
             # Create the BookStores database if it does not exist
-            db_creation_queries = self.read_sql_from_file('bookstores_create_db.sql')  # Use self here
-            for query in db_creation_queries:
-                self.cursor.execute(query)  # Execute each SQL query separately
-            print("BookStores database are created.")
+            self.execute_queries_from_file('bookstores_create_db.sql', "BookStores database are created.")
             # Create tables for BookStores database
-            tables_creation_queries = self.read_sql_from_file('bookstores_create_tables.sql')  # Use self here
-            for query in tables_creation_queries:
-                self.cursor.execute(query)  # Execute each SQL query separately
-            print("BookStores tables are created.")
-
+            self.execute_queries_from_file('bookstores_create_tables.sql', "BookStores tables are created.")
             # Create views for BookStores database
-            view_creation_queries = self.read_sql_from_file('bookstores_create_view.sql')  # Use self here
-            for query in view_creation_queries:
-                self.cursor.execute(query)  # Execute each SQL query separately
-            print("BookStores view are created.")
+            self.execute_queries_from_file('bookstores_create_view.sql', "BookStores views are created.")
 
             # Use the newly created database
             self.cursor.execute("USE BookStores")
             # Insert the initial data if not exists
             try:
-                initial_data_query = self.read_sql_from_file('bookstores_insert_data.sql')  # Use self here
-                for query in initial_data_query:
-                    self.cursor.execute(query)  # Execute each SQL query separately
-                print("Data inserted.")
+                self.execute_queries_from_file('bookstores_insert_data.sql', "Data inserted.")
             except Exception as e:
-                custom_exception = CustomExceptionHandler(e)
-                print(
-                    f"Error inserting data,Error Code: {custom_exception.error_code}, Message: {custom_exception.error_message}")
+                self.handle_exception("inserting data", e)
+
             # Commit the changes to persist them
             self.connection.commit()
         except Exception as e:
-            custom_exception = CustomExceptionHandler(e)
-            print(
-                f"Error creating initial setup,Error Code: {custom_exception.error_code}, Message: {custom_exception.error_message}")
+            self.handle_exception("creating initial setup", e)
         finally:
             self.close_connection()
 
+    def execute_queries_from_file(self, file_name, success_message=None):
+        queries = self.read_sql_from_file(file_name)
+        for query in queries:
+            self.cursor.execute(query)  # Execute each SQL query separately
+        if success_message:
+            print(success_message)
+
+    def handle_exception(self, action, exception):
+        custom_exception = CustomExceptionHandler(exception)
+        print(
+            f"Error {action}, Error Code: {custom_exception.error_code}, Message: {custom_exception.error_message}")

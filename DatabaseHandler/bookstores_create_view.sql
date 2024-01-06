@@ -122,11 +122,17 @@ GROUP BY
 ORDER BY
     total_revenue DESC;
 
--- 11. Top-performing manager (manager of the top-performing store)
+-- Drop the existing top_performing_manager_view if it exists
+IF OBJECT_ID('top_performing_manager_view', 'V') IS NOT NULL
+    DROP VIEW top_performing_manager_view;
+
+-- Create the updated top_performing_manager_view
 CREATE VIEW top_performing_manager_view AS
 SELECT TOP 1 WITH TIES
-    st.staff_id AS manager_id,
-    st.first_name + ' ' + st.last_name AS manager_name,
+    s.store_id,
+    s.store_name,
+    s.manager_id AS manager_id,
+    CONCAT(st.first_name, ' ', st.last_name) AS manager_name,
     ISNULL(SUM(oi.quantity * oi.book_price * (1 - oi.discount)), 0) AS total_revenue
 FROM
     sales.stores s
@@ -134,9 +140,10 @@ JOIN sales.staff st ON s.manager_id = st.staff_id
 LEFT JOIN sales.orders o ON s.store_id = o.store_id
 LEFT JOIN sales.order_items oi ON o.order_id = oi.order_id
 GROUP BY
-    st.staff_id, st.first_name, st.last_name
+    s.store_id, s.store_name, s.manager_id, st.first_name, st.last_name
 ORDER BY
     total_revenue DESC;
+
 
 -- 12. Top-performing store (store that has the best revenue)
 CREATE VIEW top_performing_store_view AS

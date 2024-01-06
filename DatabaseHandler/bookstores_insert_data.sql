@@ -138,10 +138,7 @@ INSERT INTO sales.stores (store_name, phone, email, address) VALUES
 ('Downtown Store', '9871234560', 'info@downtownstore.com', '789 Elm St, City'),
 ('West End Store', '9870011220', 'info@westendstore.com', '101 Oak St, City');
 
--- Updating manager_id for each store
-UPDATE sales.stores SET manager_id = (SELECT staff_id FROM sales.staff WHERE first_name = 'Alice') WHERE store_id = 1;
-UPDATE sales.stores SET manager_id = (SELECT staff_id FROM sales.staff WHERE first_name = 'Bob') WHERE store_id = 2;
-UPDATE sales.stores SET manager_id = (SELECT staff_id FROM sales.staff WHERE first_name = 'Eva') WHERE store_id = 3;
+
 
 -- Inserting data into sales.staff
 INSERT INTO sales.staff (first_name, last_name, email, phone, active, store_id, address) VALUES
@@ -157,14 +154,19 @@ INSERT INTO sales.staff (first_name, last_name, email, phone, active, store_id, 
 ('Alexander', 'Moore', 'alexander.moore@example.com', '5557384950', 1, 3, '789 Lemon Ln, County'),
 ('Charlotte', 'Perez', 'charlotte.perez@example.com', '5558493052', 1, 1, '890 Cherry Dr, Hamlet');
 
+-- Updating manager_id for each store
+UPDATE sales.stores SET manager_id = (SELECT staff_id FROM sales.staff WHERE first_name = 'Alice') WHERE store_id = 1;
+UPDATE sales.stores SET manager_id = (SELECT staff_id FROM sales.staff WHERE first_name = 'Bob') WHERE store_id = 2;
+UPDATE sales.stores SET manager_id = (SELECT staff_id FROM sales.staff WHERE first_name = 'Eva') WHERE store_id = 3;
+
 
 -- Inserting data into sales.orders
 INSERT INTO sales.orders (customer_id, order_date, store_id, staff_id) VALUES
-(1, '2024-01-05', 1, 1),
-(2, '2024-01-05', 2, 2),
-(3, '2024-01-06', 3, 3),
-(4, '2024-01-06', 1, 1),
-(5, '2024-01-07', 2, 2),
+(1, '2023-12-05', 1, 1),
+(2, '2023-12-06', 2, 2),
+(3, '2023-12-07', 3, 3),
+(4, '2023-12-10', 1, 1),
+(5, '2023-12-11', 2, 2),
 (1, '2024-01-08', 3, 3),
 (2, '2024-01-08', 1, 1),
 (3, '2024-01-09', 2, 2),
@@ -223,9 +225,6 @@ INSERT INTO sales.order_items (order_id, item_id, book_id, quantity, book_price,
 (19, 2, 25, 1, 38.99, 0.1),
 (20, 1, 30, 4, 23.99, 0.09),
 (20, 2, 35, 1, 27.99, 0.12);
-
-
-
 
 -- Inserting data into production.stocks
 INSERT INTO production.stocks (store_id, book_id, quantity) VALUES
