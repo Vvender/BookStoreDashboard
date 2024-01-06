@@ -31,7 +31,7 @@ class LoadingEventHandler:
     def get_total_revenue(self):
         query = "SELECT SUM(total_revenue) FROM total_revenue_view"
         result = self.execute_query(query)
-        return f'{result:.2f} $' if result else "No data found."
+        return f'{result:.0f} $' if result else "No data found."
 
     def get_total_books_sold(self):
         query = "SELECT SUM(total_books_sold) FROM total_books_sold_view"
