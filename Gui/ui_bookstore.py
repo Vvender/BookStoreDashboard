@@ -1795,7 +1795,7 @@ class Ui_Dashboard(object):
         self.lbl_home_customers_title.setText(_translate("Dashboard", "Total Customers"))
         self.lbl_home_employee_title.setText(_translate("Dashboard", "Top Performing Employee"))
         self.lbl_home_store_title.setText(_translate("Dashboard", "Top Performing Store"))
-        self.lbl_home_manager_title.setText(_translate("Dashboard", "Manager of the Month"))
+        self.lbl_home_manager_title.setText(_translate("Dashboard", "Top Performing Manager"))
         self.lbl_home_stock_title.setText(_translate("Dashboard", "Books in Stock"))
         self.lbl_home_growth_title.setText(_translate("Dashboard", "Yearly Sales Growth"))
         self.lbl_home_booksSold_title.setText(_translate("Dashboard", "Total Books Sold"))

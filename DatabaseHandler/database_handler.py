@@ -2,6 +2,9 @@ import pyodbc
 import os
 from ExceptionHandler.exception_handler import CustomExceptionHandler
 
+DATABASE_NAME = 'BookStores'
+SERVER_NAME = 'DESKTOP-FNO1431\SQLEXPRESS'
+
 
 class BookStoreDatabase:
     def __init__(self):
@@ -11,7 +14,7 @@ class BookStoreDatabase:
         # Establish a database connection
         self.check_initial_setup()
 
-    def db_connect(self, database='BookStores', server='DESKTOP-FNO1431\SQLEXPRESS'):
+    def db_connect(self, database=DATABASE_NAME, server=SERVER_NAME):
         try:
             # Connect to the SQL Server with autocommit mode enabled
             # Do not forget to change Server name according to your server name
@@ -38,7 +41,7 @@ class BookStoreDatabase:
 
     def check_initial_setup(self):
         try:
-            self.db_connect('master', 'DESKTOP-FNO1431\SQLEXPRESS')
+            self.db_connect(database='master')
             # Check if the BookStores database exists
             self.cursor.execute("SELECT COUNT(*) FROM sys.databases WHERE name = 'BookStores'")
             if self.cursor.fetchone()[0] == 0:
@@ -63,7 +66,7 @@ class BookStoreDatabase:
 
     def create_initial_setup(self):
         try:
-            self.db_connect('master', 'DESKTOP-FNO1431\SQLEXPRESS')
+            self.db_connect(database='master')
             # Create the BookStores database if it does not exist
             self.execute_queries_from_file('bookstores_create_db.sql', "BookStores database are created.")
             # Create tables for BookStores database
