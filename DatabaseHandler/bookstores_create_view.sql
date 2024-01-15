@@ -211,15 +211,17 @@ FROM
 -- 16 Staff Data View: sales_staff_view
 CREATE VIEW sales_staff_view AS
 SELECT
-    staff_id,
-    CONCAT(first_name, ' ', last_name) AS staff_name,
-    email,
-    phone,
-    active,
-    store_id,
-    address
+    s.staff_id,
+    CONCAT(s.first_name, ' ', s.last_name) AS staff_name,
+    s.email,
+    s.phone,
+    s.active,
+    st.store_name,  -- Change: Replace store_id with store_name
+    s.address
 FROM
-    sales.staff;
+    sales.staff s
+JOIN
+    sales.stores st ON s.store_id = st.store_id;
 
 -- 17 Stores Data View: sales_stores_view
 CREATE VIEW sales_stores_view AS

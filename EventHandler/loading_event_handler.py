@@ -104,3 +104,19 @@ class LoadingEventHandler:
         query = "SELECT * FROM sales_data_view"
         result = self.execute_query(query, fetchone=False)
         return result if result else []
+
+    def get_production_books_data(self):
+        query = "SELECT * FROM production_books_view"
+        return self.execute_query(query, fetchone=False)
+
+    def get_sales_customers_data(self):
+        query = "SELECT * FROM sales_customers_view"
+        return self.execute_query(query, fetchone=False)
+
+    def get_sales_staff_data(self):
+        query = "SELECT * FROM sales_staff_view"
+        return self.execute_query(query, fetchone=False)
+
+    def get_sales_stores_data(self):
+        query = "SELECT * FROM sales_stores_view"
+        return self.execute_query(query, fetchone=False)

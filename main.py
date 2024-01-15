@@ -5,7 +5,13 @@ from Gui.ui_bookstore import Ui_Dashboard
 from EventHandler.utility_event_handler import UtilityEventHandler
 from EventHandler.loading_event_handler import LoadingEventHandler
 from DatabaseHandler.database_handler import BookStoreDatabase
-from EventHandler.table_event_handler import populate_sales_table
+from EventHandler.table_event_handler import (
+    populate_sales_table,
+    populate_books_table,
+    populate_customers_table,
+    populate_staff_table,
+    populate_stores_table
+)
 
 # Set the working directory to the script's directory
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -61,6 +67,10 @@ class MainWindow:
 
         # LOADING TABLES #
         populate_sales_table(self.ui.tableView_sales, self.loading_event)
+        populate_books_table(self.ui.tableView_books, self.loading_event)
+        populate_customers_table(self.ui.tableView_customers, self.loading_event)
+        populate_staff_table(self.ui.tableView_employees, self.loading_event)
+        populate_stores_table(self.ui.tableView_stores, self.loading_event)
 
 
 if __name__ == "__main__":
