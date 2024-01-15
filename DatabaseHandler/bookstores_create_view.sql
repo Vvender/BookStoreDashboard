@@ -180,3 +180,70 @@ JOIN sales.stores s ON o.store_id = s.store_id
 JOIN sales.staff st ON o.staff_id = st.staff_id
 JOIN sales.order_items oi ON o.order_id = oi.order_id
 JOIN production.books b ON oi.book_id = b.book_id;
+
+-- 14. Book Data View: production_books_view
+CREATE VIEW production_books_view AS
+SELECT
+    b.book_id,
+    b.book_name,
+    a.author_name,
+    g.genre_name,
+    p.publisher_name,
+    b.book_page,
+    b.book_price
+FROM
+    production.books b
+LEFT JOIN production.authors a ON b.author_id = a.author_id
+LEFT JOIN production.genres g ON b.genre_id = g.genre_id
+LEFT JOIN production.publishers p ON b.publisher_id = p.publisher_id;
+
+-- 15. Customers Data View: sales_customers_view
+CREATE VIEW sales_customers_view AS
+SELECT
+    customer_id,
+    CONCAT(first_name, ' ', last_name) AS customer_name,
+    phone,
+    email,
+    address
+FROM
+    sales.customers;
+
+-- 16 Staff Data View: sales_staff_view
+CREATE VIEW sales_staff_view AS
+SELECT
+    staff_id,
+    CONCAT(first_name, ' ', last_name) AS staff_name,
+    email,
+    phone,
+    active,
+    store_id,
+    address
+FROM
+    sales.staff;
+
+-- 17 Stores Data View: sales_stores_view
+CREATE VIEW sales_stores_view AS
+SELECT
+    store_id,
+    store_name,
+    phone,
+    email,
+    address,
+    manager_name
+FROM
+    (
+        SELECT
+            s.store_id,
+            s.store_name,
+            s.phone,
+            s.email,
+            s.address,
+            CONCAT(st.first_name, ' ', st.last_name) AS manager_name,
+            ROW_NUMBER() OVER (PARTITION BY s.store_id ORDER BY st.active DESC) AS rn
+        FROM
+            sales.stores s
+        LEFT JOIN sales.staff st ON s.manager_id = st.staff_id
+    ) AS sub
+WHERE
+    sub.rn = 1;
+
