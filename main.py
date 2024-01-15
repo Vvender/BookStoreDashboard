@@ -1,10 +1,11 @@
 import sys
 import os
-from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QApplication, QWidget, QTableView
 from Gui.ui_bookstore import Ui_Dashboard
 from EventHandler.utility_event_handler import UtilityEventHandler
 from EventHandler.loading_event_handler import LoadingEventHandler
 from DatabaseHandler.database_handler import BookStoreDatabase
+from EventHandler.table_event_handler import populate_sales_table
 
 # Set the working directory to the script's directory
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -43,7 +44,7 @@ class MainWindow:
         self.ui.btn_menu_employees.clicked.connect(self.utility_events.utility_event_handler)
         self.ui.btn_menu_stores.clicked.connect(self.utility_events.utility_event_handler)
 
-        # LOADING EVENTS
+        # LOADING EVENTS #
         self.ui.lbl_home_revenue_info.setText(self.loading_event.get_total_revenue())
         self.ui.lbl_home_booksSold_info.setText(self.loading_event.get_total_books_sold())
         self.ui.lbl_home_avgPrice_info.setText(self.loading_event.get_average_book_price())
@@ -56,6 +57,10 @@ class MainWindow:
         self.ui.lbl_home_employee_info.setText(self.loading_event.get_top_performer_employee())
         self.ui.lbl_home_manager_info.setText(self.loading_event.get_top_performer_manager())
         self.ui.lbl_home_store_info.setText(self.loading_event.get_top_performer_store())
+
+
+        # LOADING TABLES #
+        populate_sales_table(self.ui.tableView_sales, self.loading_event)
 
 
 if __name__ == "__main__":

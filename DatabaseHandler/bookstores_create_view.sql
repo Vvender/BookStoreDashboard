@@ -126,7 +126,7 @@ ORDER BY
 IF OBJECT_ID('top_performing_manager_view', 'V') IS NOT NULL
     DROP VIEW top_performing_manager_view;
 
--- Create the updated top_performing_manager_view
+-- 11. Create the updated top_performing_manager_view
 CREATE VIEW top_performing_manager_view AS
 SELECT TOP 1 WITH TIES
     s.store_id,
@@ -159,3 +159,24 @@ GROUP BY
     s.store_id, s.store_name
 ORDER BY
     total_revenue DESC;
+
+-- 13. Sales Data (combine orders and order_items data)
+CREATE VIEW sales_data_view AS
+SELECT
+    o.order_id,
+    o.order_date,
+    c.first_name + ' ' + c.last_name AS customer_name,
+    s.store_name,
+    st.first_name + ' ' + st.last_name AS staff_name,
+    b.book_name,
+    oi.quantity,
+    oi.book_price,
+    oi.discount,
+    (oi.quantity * oi.book_price * (1 - oi.discount)) AS total_price
+FROM
+    sales.orders o
+JOIN sales.customers c ON o.customer_id = c.customer_id
+JOIN sales.stores s ON o.store_id = s.store_id
+JOIN sales.staff st ON o.staff_id = st.staff_id
+JOIN sales.order_items oi ON o.order_id = oi.order_id
+JOIN production.books b ON oi.book_id = b.book_id;

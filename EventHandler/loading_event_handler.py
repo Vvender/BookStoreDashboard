@@ -99,3 +99,8 @@ class LoadingEventHandler:
         query = "SELECT TOP 1 WITH TIES store_name FROM top_performing_store_view ORDER BY total_revenue DESC"
         result = self.execute_query(query)
         return result if result else "No data found."
+
+    def get_sales_data(self):
+        query = "SELECT * FROM sales_data_view"
+        result = self.execute_query(query, fetchone=False)
+        return result if result else []
