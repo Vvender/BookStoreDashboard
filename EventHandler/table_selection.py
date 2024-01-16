@@ -48,7 +48,7 @@ class TableSelectionHandler:
             self.ui.lbl_employees_surname.setText(str(staff_details.get("staff_surname", "")))
             self.ui.lbl_employees_phone.setText(str(staff_details.get("phone", "")))
             self.ui.lbl_employees_email.setText(str(staff_details.get("email", "")))
-            status_text = "Active" if staff_details.get("active") == 0 else "Inactive"
+            status_text = "Active" if staff_details.get("active") else "Inactive"
             self.ui.lbl_employees_status.setText(status_text)
             self.ui.lbl_employees_store.setText(str(staff_details.get("store_name", "")))
             self.ui.lbl_employees_manager.setText(str(staff_details.get("manager_name", "")))
