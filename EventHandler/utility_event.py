@@ -1,6 +1,7 @@
 import webbrowser
 from PyQt5.QtCore import QUrl
 from PyQt5.QtGui import QDesktopServices
+from ExceptionHandler.exception_handler import CustomExceptionHandler
 
 
 class UtilityEventHandler:

@@ -142,17 +142,17 @@ INSERT INTO sales.stores (store_name, phone, email, address) VALUES
 
 -- Inserting data into sales.staff
 INSERT INTO sales.staff (first_name, last_name, email, phone, active, store_id, address) VALUES
-('Alice', 'Smith', 'alice.smith@example.com', '5551234567', 1, 1, '123 Center St, City'),
-('Bob', 'Johnson', 'bob.johnson@example.com', '5559876543', 1, 2, '456 Elm St, Town'),
-('Eva', 'Williams', 'eva.williams@example.com', '5551928374', 1, 3, '789 Oak Ave, Village'),
-('David', 'Miller', 'david.miller@example.com', '5553847562', 1, 1, '567 Pine St, County'),
-('Sophia', 'Garcia', 'sophia.garcia@example.com', '5555061728', 1, 2, '890 Cedar Ave, Hamlet'),
-('James', 'Rodriguez', 'james.rodriguez@example.com', '5556758493', 3, 1, '234 Birch Ln, Borough'),
-('Ava', 'Lopez', 'ava.lopez@example.com', '5559302716', 1, 1, '345 Maple Rd, Village'),
-('Daniel', 'Gonzalez', 'daniel.gonzalez@example.com', '5558192736', 1, 1, '456 Pineapple Ave, Town'),
-('Mia', 'Hernandez', 'mia.hernandez@example.com', '5556273849', 1, 2, '678 Orange St, City'),
-('Alex', 'Moore', 'alexander.moore@example.com', '5557384950', 1, 3, '789 Lemon Ln, County'),
-('Charlotte', 'Perez', 'charlotte.perez@example.com', '5558493052', 1, 1, '890 Cherry Dr, Hamlet');
+('Alice', 'Smith', 'alice.smith@example.com', '5551234567', 0, 1, '123 Center St, City'),
+('Bob', 'Johnson', 'bob.johnson@example.com', '5559876543', 0, 2, '456 Elm St, Town'),
+('Eva', 'Williams', 'eva.williams@example.com', '5551928374', 0, 3, '789 Oak Ave, Village'),
+('David', 'Miller', 'david.miller@example.com', '5553847562', 0, 1, '567 Pine St, County'),
+('Sophia', 'Garcia', 'sophia.garcia@example.com', '5555061728', 0, 2, '890 Cedar Ave, Hamlet'),
+('James', 'Rodriguez', 'james.rodriguez@example.com', '5556758493', 0, 1, '234 Birch Ln, Borough'),
+('Ava', 'Lopez', 'ava.lopez@example.com', '5559302716', 0, 1, '345 Maple Rd, Village'),
+('Daniel', 'Gonzalez', 'daniel.gonzalez@example.com', '5558192736', 0, 1, '456 Pineapple Ave, Town'),
+('Mia', 'Hernandez', 'mia.hernandez@example.com', '5556273849', 0, 2, '678 Orange St, City'),
+('Alex', 'Moore', 'alexander.moore@example.com', '5557384950', 0, 3, '789 Lemon Ln, County'),
+('Charlotte', 'Perez', 'charlotte.perez@example.com', '5558493052', 0, 1, '890 Cherry Dr, Hamlet');
 
 -- Updating manager_id for each store
 UPDATE sales.stores SET manager_id = (SELECT staff_id FROM sales.staff WHERE first_name = 'Alice') WHERE store_id = 1;
@@ -188,7 +188,7 @@ INSERT INTO sales.order_items (order_id, item_id, book_id, quantity, book_price,
 (1, 1, 1, 2, 29.99, 0.05),
 (1, 2, 3, 1, 24.99, 0.1),
 (1, 3, 5, 3, 19.99, 0.08),
-(1, 4, 7, 1, 39.99, 0.12),
+(2, 1, 7, 1, 39.99, 0.12),
 (3, 1, 10, 2, 15.99, 0.07),
 (3, 2, 15, 1, 22.99, 0.1),
 (4, 1, 20, 4, 18.99, 0.06),

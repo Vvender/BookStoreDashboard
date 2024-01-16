@@ -34,7 +34,7 @@ def populate_customers_table(table_view, loading_tables):
 def populate_staff_table(table_view, loading_tables):
     try:
         data = loading_tables.get_staff_data()
-        column_names = ["Staff ID", "Staff Name", "Email", "Phone", "Active", "Store", "Address"]
+        column_names = ["Staff ID", "Staff Name", "Email", "Phone", "Active", "Store","Manager", "Address"]
         populate_table(table_view, data, column_names)
     except Exception as e:
         CustomExceptionHandler("Populating Staff Table", e)

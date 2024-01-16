@@ -3,14 +3,14 @@ import os
 from PyQt5.QtWidgets import QApplication, QWidget
 from Gui.ui_bookstore import Ui_Dashboard
 from DatabaseHandler.database_handler import BookStoreDatabase
-from EventHandler.populate_table_handler import \
+from EventHandler.populate_table import \
     (populate_sales_table,
      populate_books_table,
      populate_customers_table,
      populate_staff_table,
      populate_stores_table)
-from EventHandler.table_selection_handler import TableSelectionHandler
-from EventHandler.utility_event_handler import UtilityEventHandler
+from EventHandler.table_selection import TableSelectionHandler
+from EventHandler.utility_event import UtilityEventHandler
 
 from LoadingHandler.card_data_loader import LoadingCardData
 from LoadingHandler.label_data_loader import LoadingLabelData
@@ -39,7 +39,7 @@ class MainWindow:
         self.loading_tables = LoadingTableData(self.app, self.ui, self.database)
 
         # EVENT INSTANCES
-        self.table_selection_events = TableSelectionHandler(self.ui, self.loading_cards)
+        self.table_selection = TableSelectionHandler(self.ui, self.loading_cards)
         self.utility_events = UtilityEventHandler(self.app, self.ui)
 
         # UTILITY, HEADER EVENTS
@@ -82,8 +82,11 @@ class MainWindow:
         populate_stores_table(self.ui.tableView_stores, self.loading_tables)
 
         # TABLE SELECTION EVENT
-        self.ui.tableView_books.selectionModel().selectionChanged.connect(
-            self.table_selection_events.handle_selection_change)
+        self.ui.tableView_books.selectionModel().selectionChanged.connect(self.table_selection.update_book_labels)
+        self.ui.tableView_customers.selectionModel().selectionChanged.connect(self.table_selection.update_customer_labels)
+        self.ui.tableView_employees.selectionModel().selectionChanged.connect(self.table_selection.update_staff_labels)
+        self.ui.tableView_stores.selectionModel().selectionChanged.connect(self.table_selection.update_store_labels)
+
 
 
 if __name__ == "__main__":

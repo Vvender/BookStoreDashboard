@@ -230,12 +230,15 @@ SELECT
     s.email,
     s.phone,
     s.active,
-    st.store_name,  -- Change: Replace store_id with store_name
+    st.store_name,
+    CONCAT(sm.first_name, ' ', sm.last_name) AS manager_name,
     s.address
 FROM
     sales.staff s
 JOIN
-    sales.stores st ON s.store_id = st.store_id;
+    sales.stores st ON s.store_id = st.store_id
+LEFT JOIN
+    sales.staff sm ON st.manager_id = sm.staff_id;
 
 -- 17 Stores Data View: sales_stores_view
 CREATE VIEW sales_stores_view AS
