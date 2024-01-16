@@ -12,7 +12,10 @@ class BookStoreDatabase:
         self.connection = None
         self.cursor = None
         # Establish a database connection
-        self.check_initial_setup()
+        try:
+            self.check_initial_setup()
+        except Exception as e:
+            CustomExceptionHandler("Initialization", e)
 
     def db_connect(self, database=DATABASE_NAME, server=SERVER_NAME):
         try:
@@ -26,8 +29,8 @@ class BookStoreDatabase:
                 autocommit=True  # Set autocommit to True to prevent multi-statement transactions
             )
             self.cursor = self.connection.cursor()
-        except Exception as e:
-            self.handle_exception("connecting to the database", e)
+        except pyodbc.Error as e:  # Catch pyodbc errors specifically
+            CustomExceptionHandler("Connecting To The Database", e)
 
     def close_connection(self):
         try:
@@ -36,8 +39,9 @@ class BookStoreDatabase:
                 self.cursor.close()
             if self.connection:
                 self.connection.close()
-        except Exception as e:
-            self.handle_exception("closing connection", e)
+        except pyodbc.Error as e:
+            CustomExceptionHandler("Closing Connection To Database", e)
+
 
     def check_initial_setup(self):
         try:
@@ -50,19 +54,23 @@ class BookStoreDatabase:
                 self.create_initial_setup()
             else:
                 print("Database already exists; no further action is necessary.")
+        except pyodbc.Error as e:
+            CustomExceptionHandler("Checkin Initial Setup", e)
+
+    @staticmethod
+    def read_sql_from_file(file_name):
+        try:
+            current_directory = os.path.dirname(os.path.abspath(__file__))
+            file_path = os.path.join(current_directory, file_name)
+
+            with open(file_path, 'r') as file:
+                sql_queries = file.read().split(';')  # Split the file content into individual queries
+
+            # Remove any empty queries (e.g., due to trailing ';')
+            sql_queries = [query.strip() for query in sql_queries if query.strip()]
+            return sql_queries
         except Exception as e:
-            self.handle_exception("checking initial setup", e)
-
-    def read_sql_from_file(self, file_name):
-        current_directory = os.path.dirname(os.path.abspath(__file__))
-        file_path = os.path.join(current_directory, file_name)
-
-        with open(file_path, 'r') as file:
-            sql_queries = file.read().split(';')  # Split the file content into individual queries
-
-        # Remove any empty queries (e.g., due to trailing ';')
-        sql_queries = [query.strip() for query in sql_queries if query.strip()]
-        return sql_queries
+            CustomExceptionHandler("Reading SQL File", e)
 
     def create_initial_setup(self):
         try:
@@ -80,23 +88,22 @@ class BookStoreDatabase:
             try:
                 self.execute_queries_from_file('bookstores_insert_data.sql', "Data inserted.")
             except Exception as e:
-                self.handle_exception("inserting data", e)
+                CustomExceptionHandler("Inserting Data", e)
 
             # Commit the changes to persist them
             self.connection.commit()
         except Exception as e:
-            self.handle_exception("creating initial setup", e)
+            CustomExceptionHandler("Creating Initial Setup", e)
         finally:
             self.close_connection()
 
     def execute_queries_from_file(self, file_name, success_message=None):
-        queries = self.read_sql_from_file(file_name)
-        for query in queries:
-            self.cursor.execute(query)  # Execute each SQL query separately
-        if success_message:
-            print(success_message)
-
-    def handle_exception(self, action, exception):
-        custom_exception = CustomExceptionHandler(exception)
-        print(
-            f"Error {action}, Error Code: {custom_exception.error_code}, Message: {custom_exception.error_message}")
+        try:
+            queries = self.read_sql_from_file(file_name)
+            # Execute each SQL query separately
+            for query in queries:
+                self.cursor.execute(query)
+            if success_message:
+                print(success_message)
+        except Exception as e:
+            CustomExceptionHandler("Executing Query", e)

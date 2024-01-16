@@ -42,8 +42,8 @@ class UtilityEventHandler:
             elif sender in self.button_mapping.values():
                 index = list(self.button_mapping.keys())[list(self.button_mapping.values()).index(sender)]
                 self.page_changer(index)
-        except Exception as e:  # Handle any exceptions that occur
-            print(f"An error occurred during utility event handler: {e}")
+        except Exception as e:
+            CustomExceptionHandler("Utility Event", e)
 
     def page_changer(self, index):
         try:
@@ -54,8 +54,8 @@ class UtilityEventHandler:
             self.current_page = index
             # Call the button_style_editor to update the button styles
             self.button_style_editor(self.previous_page, self.current_page)
-        except Exception as e:  # Handle any exceptions that occur
-            print(f"An error occurred during main event: {e}")
+        except Exception as e:
+            CustomExceptionHandler("Page Changer", e)
 
     def button_style_editor(self, previous_page, current_page):
         try:
@@ -72,5 +72,5 @@ class UtilityEventHandler:
                 current_button = self.button_mapping[current_page]
                 current_button.setStyleSheet(style_highlighted)
 
-        except Exception as e:  # Handle any exceptions that occur
-            print(f"An error occurred during button style editing: {e}")
+        except Exception as e:
+            CustomExceptionHandler("Button Style Editor", e)

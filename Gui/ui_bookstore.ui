@@ -907,7 +907,7 @@ QLabel{
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page_home">
        <widget class="QFrame" name="frm_home_customers">
@@ -2253,7 +2253,7 @@ QLabel{
        </widget>
       </widget>
       <widget class="QWidget" name="page_sales">
-       <widget class="QTableWidget" name="tableWidget_sales">
+       <widget class="QTableView" name="tableView_sales">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -2274,56 +2274,6 @@ QLabel{
         <property name="styleSheet">
          <string notr="true">background-color:rgb(0,0,0,75);</string>
         </property>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
        </widget>
        <widget class="QPushButton" name="btn_sales_add">
         <property name="geometry">
@@ -2502,7 +2452,7 @@ QLabel{
          </size>
         </property>
        </widget>
-       <widget class="QTableWidget" name="tableWidget_books">
+       <widget class="QTableView" name="tableView_books">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -2514,46 +2464,6 @@ QLabel{
         <property name="styleSheet">
          <string notr="true">background-color:rgb(0,0,0,75);</string>
         </property>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
        </widget>
        <widget class="QPushButton" name="btn_books_delete">
         <property name="geometry">
@@ -3228,7 +3138,7 @@ QLabel{
          </size>
         </property>
        </widget>
-       <widget class="QTableWidget" name="tableWidget_customers">
+       <widget class="QTableView" name="tableView_customers">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -3240,36 +3150,6 @@ QLabel{
         <property name="styleSheet">
          <string notr="true">background-color:rgb(0,0,0,75);</string>
         </property>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
        </widget>
        <widget class="QFrame" name="frm_customers_customer_card">
         <property name="geometry">
@@ -3773,7 +3653,7 @@ QLabel{
          </size>
         </property>
        </widget>
-       <widget class="QTableWidget" name="tableWidget_employees">
+       <widget class="QTableView" name="tableView_employees">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -3785,46 +3665,6 @@ QLabel{
         <property name="styleSheet">
          <string notr="true">background-color:rgb(0,0,0,75);</string>
         </property>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
        </widget>
        <widget class="QFrame" name="frm_employees_employee_card">
         <property name="geometry">
@@ -4964,7 +4804,7 @@ QLabel{
          </size>
         </property>
        </widget>
-       <widget class="QTableWidget" name="tableWidget_stores">
+       <widget class="QTableView" name="tableView_stores">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -4976,31 +4816,6 @@ QLabel{
         <property name="styleSheet">
          <string notr="true">background-color:rgb(0,0,0,75);</string>
         </property>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
        </widget>
       </widget>
      </widget>
@@ -5026,27 +4841,27 @@ QLabel{
   <tabstop>btn_sales_edit</tabstop>
   <tabstop>btn_sales_save</tabstop>
   <tabstop>btn_sales_delete</tabstop>
-  <tabstop>tableWidget_sales</tabstop>
+  <tabstop>tableView_sales</tabstop>
   <tabstop>btn_books_add</tabstop>
   <tabstop>btn_books_edit</tabstop>
   <tabstop>btn_books_save</tabstop>
   <tabstop>btn_books_delete</tabstop>
-  <tabstop>tableWidget_books</tabstop>
+  <tabstop>tableView_books</tabstop>
   <tabstop>btn_customers_add</tabstop>
   <tabstop>btn_customers_edit</tabstop>
   <tabstop>btn_customers_save</tabstop>
   <tabstop>btn_customers_delete</tabstop>
-  <tabstop>tableWidget_customers</tabstop>
+  <tabstop>tableView_customers</tabstop>
   <tabstop>btn_employees_add</tabstop>
   <tabstop>btn_employees_edit</tabstop>
   <tabstop>btn_employees_save</tabstop>
   <tabstop>btn_employees_delete</tabstop>
-  <tabstop>tableWidget_employees</tabstop>
+  <tabstop>tableView_employees</tabstop>
   <tabstop>btn_stores_add</tabstop>
   <tabstop>btn_stores_edit</tabstop>
   <tabstop>btn_stores_save</tabstop>
   <tabstop>btn_stores_delete</tabstop>
-  <tabstop>tableWidget_stores</tabstop>
+  <tabstop>tableView_stores</tabstop>
  </tabstops>
  <resources>
   <include location="Icons/bookstore.qrc"/>

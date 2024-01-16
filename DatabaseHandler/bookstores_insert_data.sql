@@ -151,7 +151,7 @@ INSERT INTO sales.staff (first_name, last_name, email, phone, active, store_id, 
 ('Ava', 'Lopez', 'ava.lopez@example.com', '5559302716', 1, 1, '345 Maple Rd, Village'),
 ('Daniel', 'Gonzalez', 'daniel.gonzalez@example.com', '5558192736', 1, 1, '456 Pineapple Ave, Town'),
 ('Mia', 'Hernandez', 'mia.hernandez@example.com', '5556273849', 1, 2, '678 Orange St, City'),
-('Alexander', 'Moore', 'alexander.moore@example.com', '5557384950', 1, 3, '789 Lemon Ln, County'),
+('Alex', 'Moore', 'alexander.moore@example.com', '5557384950', 1, 3, '789 Lemon Ln, County'),
 ('Charlotte', 'Perez', 'charlotte.perez@example.com', '5558493052', 1, 1, '890 Cherry Dr, Hamlet');
 
 -- Updating manager_id for each store
@@ -162,26 +162,26 @@ UPDATE sales.stores SET manager_id = (SELECT staff_id FROM sales.staff WHERE fir
 
 -- Inserting data into sales.orders
 INSERT INTO sales.orders (customer_id, order_date, store_id, staff_id) VALUES
-(1, '2023-12-05', 1, 1),
-(2, '2023-12-06', 2, 2),
-(3, '2023-12-07', 3, 3),
-(4, '2023-12-10', 1, 1),
-(5, '2023-12-11', 2, 2),
-(1, '2024-01-08', 3, 3),
-(2, '2024-01-08', 1, 1),
-(3, '2024-01-09', 2, 2),
-(4, '2024-01-09', 3, 3),
-(5, '2024-01-10', 1, 1),
-(1, '2024-01-11', 2, 2),
-(2, '2024-01-11', 3, 3),
-(3, '2024-01-12', 1, 1),
-(4, '2024-01-12', 2, 2),
-(5, '2024-01-13', 3, 3),
-(1, '2024-01-14', 1, 1),
-(2, '2024-01-14', 2, 2),
-(3, '2024-01-15', 3, 3),
-(4, '2024-01-15', 1, 1),
-(5, '2024-01-16', 2, 2);
+(1, '2023-12-05', 1, 4),
+(2, '2023-12-06', 2, 5),
+(3, '2023-12-07', 3, 10),
+(4, '2023-12-10', 1, 4),
+(5, '2023-12-11', 2, 9),
+(1, '2024-01-08', 3, 10),
+(2, '2024-01-08', 1, 4),
+(3, '2024-01-09', 2, 5),
+(4, '2024-01-09', 3, 10),
+(5, '2024-01-10', 1, 6),
+(1, '2024-01-11', 2, 9),
+(2, '2024-01-11', 3, 10),
+(3, '2024-01-12', 1, 6),
+(4, '2024-01-12', 2, 9),
+(5, '2024-01-13', 3, 10),
+(1, '2024-01-14', 1, 7),
+(2, '2024-01-14', 2, 5),
+(3, '2024-01-15', 3, 10),
+(4, '2024-01-15', 1, 8),
+(5, '2024-01-16', 2, 9);
 
 -- Inserting data into sales.order_items
 INSERT INTO sales.order_items (order_id, item_id, book_id, quantity, book_price, discount) VALUES

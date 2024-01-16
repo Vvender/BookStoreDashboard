@@ -186,16 +186,30 @@ CREATE VIEW production_books_view AS
 SELECT
     b.book_id,
     b.book_name,
+    b.book_barcode,
     a.author_name,
     g.genre_name,
     p.publisher_name,
     b.book_page,
-    b.book_price
+    b.book_price,
+    SUM(s.quantity) AS total_quantity  -- Use SUM to get total quantity across all stores
 FROM
     production.books b
 LEFT JOIN production.authors a ON b.author_id = a.author_id
 LEFT JOIN production.genres g ON b.genre_id = g.genre_id
-LEFT JOIN production.publishers p ON b.publisher_id = p.publisher_id;
+LEFT JOIN production.publishers p ON b.publisher_id = p.publisher_id
+LEFT JOIN production.stocks s ON b.book_id = s.book_id
+GROUP BY
+    b.book_id,  -- Group by book information
+    b.book_name,
+    b.book_barcode,
+    a.author_name,
+    g.genre_name,
+    p.publisher_name,
+    b.book_page,
+    b.book_price;
+
+
 
 -- 15. Customers Data View: sales_customers_view
 CREATE VIEW sales_customers_view AS
