@@ -1,8 +1,11 @@
-Bookstore Management System
-Overview
+BOOKSTORE MANAGEMENT SYSTEM
+
+OVERVIEW
+
 This repository presents a comprehensive Bookstore Management System with an integrated database handler. Developed using PyQt5, the system offers a user-friendly graphical interface to manage various aspects of a fictional bookstore. The accompanying database handler, implemented in Python, utilizes pyodbc to connect to a Microsoft SQL Server database, enabling seamless interaction with the underlying data.
 
-Features
+FEATURES
+
 Graphical User Interface (GUI):
 
 Built with PyQt5 for an intuitive and interactive user experience.
@@ -30,22 +33,35 @@ Navigation: Allows seamless navigation between different sections of the applica
 
 Exception Handling:
 
-CustomExceptionHandler Class: Logs and handles exceptions with detailed error codes and messages.
+CustomExceptionHandler Class: 
+Logs and handles exceptions with detailed error codes and messages.
 Logging: Logs errors to an "error_log.txt" file, providing a comprehensive record of issues.
 
 Technologies Used:
+
 Python 3.x: Core programming language for system development.
+
 PyQt5: GUI framework for creating the interactive interface.
+
 pyodbc: Library for connecting to and interacting with the Microsoft SQL Server database.
 
-Reporting and Customization
+
+
+REPORTING AND CUSTOMIZATION
+
 Utilize the predefined views for reporting purposes. Customize or extend these views based on specific reporting needs.
 
-Exception Handling and Logging
+
+EXCEPTION HANDLING AND LOGGING
+
 The CustomExceptionHandler class ensures comprehensive error logging, aiding in troubleshooting and issue resolution. Review the "error_log.txt" file for a detailed record of encountered errors.
 
-Contributing
+
+CONTRIBUTING
+
 Feel free to explore, contribute, or use this code as a reference for your projects. If you have questions or encounter issues, please open an issue.
 
-License
+
+LICENCE 
+
 This project is licensed under the MIT License.
