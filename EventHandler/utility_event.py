@@ -38,7 +38,7 @@ class UtilityEventHandler:
             # Check if the sender is the CV button
             elif sender == self.ui.btn_cv:
                 # Open the CV URL
-                QDesktopServices.openUrl(QUrl('https://blush-aretha-94.tiiny.site'))
+                QDesktopServices.openUrl(QUrl('https://amethyst-nancee-79.tiiny.site'))
             # Check if the sender is a menu button and call page_changer with the corresponding index
             elif sender in self.button_mapping.values():
                 index = list(self.button_mapping.keys())[list(self.button_mapping.values()).index(sender)]
