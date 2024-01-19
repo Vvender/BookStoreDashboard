@@ -1873,15 +1873,3 @@ class Ui_Dashboard(object):
         self.lbl_stores_phone.setText(_translate("Dashboard", "-"))
         self.lbl_stores_email.setText(_translate("Dashboard", "-"))
         self.lbl_stores_address.setText(_translate("Dashboard", "<html><head/><body><p>-</p></body></html>"))
-
-
-
-if __name__ == "__main__":
-    import sys
-
-    app = QtWidgets.QApplication(sys.argv)
-    Dashboard = QtWidgets.QWidget()
-    ui = Ui_Dashboard()
-    ui.setupUi(Dashboard)
-    Dashboard.show()
-    sys.exit(app.exec_())
